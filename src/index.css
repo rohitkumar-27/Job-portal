@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+  body{
+    position: relative; /* Establish a containing block for the pseudo-element */
+    margin: 0; /* Remove default body margin */
+    height: 100%; /* Ensure the body spans the viewport */
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+   
+  }
+
+  body::before {
+    content: ""; /* Creates the pseudo-element */
+    position: fixed; /* Fixes the background in place */
+    top: 0;
+    left: 0;
+    width: 100vw; /* Covers the full width of the viewport */
+    height: 100vh; /* Covers the full height of the viewport */
+    background: linear-gradient(to right, #6b21a8, #4c1d95, #6b21a8); /* Your gradient */
+    z-index: -1; /* Places it behind the content */
+    background-size: cover; /* Ensures the gradient covers the viewport */
+    background-repeat: no-repeat; /* Prevents tiling */
+  }
+
+  @media (max-width: 768px) { /* Tablet and smaller */
+    body::before {
+      background: linear-gradient(to bottom, #6b21a8, #4c1d95, #6b21a8); /* Change to a vertical gradient for smaller screens */
+    }
+  }
+
+  @media (max-width: 480px) { /* Mobile */
+    body::before {
+      background: linear-gradient(to bottom, #4c1d95, #6b21a8); /* Further adjust for smaller screens */
+    }
+  }
+}
