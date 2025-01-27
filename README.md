@@ -1,5 +1,7 @@
 # React + Vite
 
+This project is done with vite + React, and the Firebase Database is used.
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
